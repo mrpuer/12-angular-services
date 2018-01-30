@@ -19,13 +19,12 @@ angular
               phone: newUser.phone,
           };
           state.status = true;
-          console.log(state.user);
       },
       removeUser() {
           state.user = {};
           state.status = false;
       },
-      getStateStatus() {
+      getStatus() {
         return state.status;
       }
     };

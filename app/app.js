@@ -34,6 +34,6 @@ config(function($stateProvider) {
         }).state({
             name: 'account',
             url: '/myaccount',
-            templateUrl: 'Account/Account.html',
+            template: '<account-component></account-component>'
         });
 });

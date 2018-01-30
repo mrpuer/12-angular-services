@@ -8,7 +8,7 @@
   }
 
 </style>
-
+<div ng-hide="$ctrl.userInfoShow">
 <form name="$ctrl.newUserForm" novalidate>
   <div class="form-group">
       <label>Имя</label>
@@ -47,20 +47,23 @@
   </button>
 
 </form>
-{{$ctrl.getStatus}}
-Account component here
-<!-- <div ng-show="$ctrl.getStatus"  class="container"> -->
-    <div ng-repeat="data in $ctrl.userInfo"  class="container">
-  SHOW
+</div>
+
+<div ng-show="$ctrl.userInfoShow"  class="container">
   <div class="row">
+    <h2>Your account info</h2>
     <div class="col">
-      {{$ctrl.getStatus}}
+      Name: {{$ctrl.userInfo.name}}
     </div>
     <div class="col">
-      {{$ctrl.getStatus}}
+      Email: {{$ctrl.userInfo.email}}
     </div>
     <div class="col">
-      {{$ctrl.getStatus}}
+      Phone: {{$ctrl.userInfo.phone}}
     </div>
+    <div class="col">
+        <button type="submit" class="btn btn-default" data-ng-click="$ctrl.removeUser()">Удалить
+          </button>
+      </div>
   </div>
 </div>

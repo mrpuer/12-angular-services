@@ -1,13 +1,19 @@
 angular.module('myApp').component('accountComponent', {
   templateUrl: 'Account/AccountComponent.html',
   controller: function(AccountService) {
-    const ctrl = this;
-    ctrl.getStatus = AccountService.getStateStatus();
-    ctrl.userInfo = AccountService.getData();
-    ctrl.removeUser = AccountService.removeUser();
+    this.userInfoShow = AccountService.getStatus();
+    this.userInfo = AccountService.getData();
+
     this.addUser = function(newUser) {
-      ctrl.newUserForm.$setPristine();
       AccountService.addUser(newUser);
+      this.userInfo = AccountService.getData();
+      this.userInfoShow = AccountService.getStatus();
+    };
+
+    this.removeUser = function() {
+      AccountService.removeUser();
+      this.userInfo = AccountService.getData();
+      this.userInfoShow = AccountService.getStatus();
     };
   }
 });

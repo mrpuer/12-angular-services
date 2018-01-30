@@ -1,6 +1,6 @@
-'use strict';
+// 'use strict';
 
-angular
-  .module('myApp')
-  .controller('AccountCtrl', function(AccountService) {
-  });
+// angular
+//   .module('myApp')
+//   .controller('AccountCtrl', function(AccountService) {
+//   });
